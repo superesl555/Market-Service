@@ -38,13 +38,13 @@ services:
       SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       SPRING_APPLICATION_JSON: '{"spring.kafka.bootstrap-servers":"kafka:9092"}'
 
-#  orders-service:
-#    build: ./orders-service
-#    depends_on: [kafka, postgres]
-#    ports:
-#      - "8082:8080"
-#    environment:
-#      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/billing
-#      SPRING_DATASOURCE_USERNAME: billing
-#      SPRING_DATASOURCE_PASSWORD: billing
-#      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+  orders-service:
+    build: ./orders-service
+    depends_on: [kafka, postgres]
+    ports:
+      - "8082:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/billing
+      SPRING_DATASOURCE_USERNAME: billing
+      SPRING_DATASOURCE_PASSWORD: billing
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092

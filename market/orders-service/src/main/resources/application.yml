@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/billing
+    username: billing
+    password: billing
+  jpa:
+    hibernate:
+      ddl-auto: update
+  kafka:
+    bootstrap-servers: kafka:9092
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
